@@ -1,0 +1,26 @@
+<%- include("./header.ejs") %>
+<h1><center>Welcome to the admin panel <%= user.username %>#<%= user.discriminator %></center></h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-11">
+            <table class="table" style="color: #fff;">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">PROJECT</th>
+                    <th scope="col">DELETE</th>
+                  </tr>
+                </thead>
+                <% data.forEach(x => { %>
+                <tbody>
+                  <tr>
+                    <td><%= x.id %></td>
+                    <td><%= x.link %></td>
+                    <td><a href="/dashboard/remove/<%= x._id %>"><i style="color: #dc3545;" class="fa-solid fa-circle-xmark"></i></a></td>
+                  </tr>
+                </tbody>
+                <% }) %>
+            </table>
+        </div>
+    </div>
+</div>

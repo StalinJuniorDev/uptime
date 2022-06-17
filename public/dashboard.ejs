@@ -1,0 +1,53 @@
+<%- include("./header.ejs") %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+      <br>
+      <center><h1>Add Projects</h1></center>
+      <form action="/dashboard" method="post">
+        <% if(data.length === 2){ %>
+          <input type="url"  pattern="[//:.a-zA-Z0-9\s]+" name="link" class="form-control" placeholder="https://example.glitch.me" disabled required>
+        <% }else{ %>
+          <input type="url"  pattern="[//:.a-zA-Z0-9\s]+" name="link" class="form-control" placeholder="https://example.glitch.me" required>
+        <% } %>
+        <br>
+        <div class="d-grid gap-2">
+        <button class="btn btn-success" type="submit">Add Project!</button>
+        <button class="btn btn-secondary" type="button"  data-bs-toggle="modal" data-bs-target="#links">Saved Projects</button>
+        </div>
+      </form>
+      <div class="modal fade" id="links" style="color: #000000;" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Saved Projects</h5>
+            </div>
+          <div class="modal-body">
+            <% if(data.length === 0){ %>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            <% }else if(data.length === 1){ %>
+              <div class="progress">
+                <div class="progress-bar bg-warning" style="width: 50%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            <% }else if(data.length === 2){ %>
+              <div class="progress">
+                <div class="progress-bar bg-danger" style="width: 100%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            <% } %>
+            <% data.forEach(x => { %>
+              <p><span><%= x.link %><a href="/dashboard/remove/<%= x._id %>"><i style="color: #dc3545;" class="fa-solid fa-circle-xmark"></i></a></span></p>
+            <% }) %>
+            <p>You have <%= data.length %>/2 links registered in the system</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+          </div>
+          </div>
+          </div>
+          </div>
+      <%- include("./footer.ejs") %>
+    </div>
+  </div>
+</div>

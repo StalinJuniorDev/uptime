@@ -1,0 +1,84 @@
+<%- include("./header.ejs") %>
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+  <h1>Stalin Junior - Uptime <i class="fa-solid fa-circle-up"></i></h1>
+  <p>Stalin Junior - Uptime is an uptime site that aims to keep the projects made with glitch, which started to be developed in 2022, open 24/7.</p>
+  <% if(!user){ %>
+    <a href="/login" class="btn btn-light btn-lg" style="border-radius: 100px;"><i class="fa-brands fa-discord"></i> Log In in with Discord</a>
+  <% } %>
+  <br>
+  <br>
+  <h4>99% Uptime Guarantee</h4>
+  </div>
+  <div class="col">
+    <img width="350px" class="img-fluid float-end" src="https://i.ibb.co/B6HXW11/Screenshot-20220609-174114.png" style="border-radius: 100px;">
+  </div>
+</div>
+</div>
+<div id="pricing">
+  <div class="container">
+<div class="row justify-content-center">
+  <center><h1>Pricing</h1></center>
+  <div class="col">
+  <div class="card" style="background-color: transparent; border: 2px solid #fff; height: 250px;">
+    <div class="card-body">
+      <h3>Free - Poor Package</h3>
+    <li>2 project constraint</li>
+    <br>
+    <div class="d-grid gap-2">
+    <% if(!user){ %>
+      <a href="/login" class="btn btn-light btn-lg" style="border-radius: 100px;"><i class="fa-brands fa-discord"></i> Log In in with Discord</a>
+    <% }else if(user){ %>
+      <p><center>The package you are using now</center></p>
+    <% } %>
+    </div>
+    </div>
+  </div>
+  </div>
+  <div class="col">
+    <div class="card" style="background-color: transparent; border: 2px solid #fff; height: 250px;">
+    <div class="card-body">
+    <h3>$2 - Gold Package</h3>
+    <li>5 project constraint</li>
+    <li>live support</li>
+    <li>you support Stalin Junior Development</li>
+    <li>you look so cool</li>
+    <br>
+    <% if(!user){ %>
+    <div class="d-grid gap-2">
+    <a href="/login" class="btn btn-light btn-lg" style="border-radius: 100px;">$ Buy</a>
+    </div>
+    <% }else if(user){ %>
+      <p><center>Premium feature coming soon</center></p>
+    <% } %>
+    </div>
+  </div>
+  </div>
+    <div class="col">
+      <div class="card" style="background-color: transparent; border: 2px solid #fff; height: 250px;">
+    <div class="card-body">
+    <h3>$4 - Diamond Package</h3>
+    <li>10 project constraint</li>
+    <li>live support</li>
+    <li>you support Stalin Junior Development</li>
+    <li>you look so cool</li>
+    <br>
+    <% if(!user){ %>
+    <div class="d-grid gap-2">
+    <a href="/login" class="btn btn-light btn-lg" style="border-radius: 100px;">$ Buy</a>
+    </div>
+    <% }else if(user){ %>
+      <p><center>Premium feature coming soon</center></p>
+    <% } %>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="card" style="background-color: transparent; border: none;">
+  <div class="card-body">
+    <%- include("./footer.ejs") %>
+  </div>
+</div>
