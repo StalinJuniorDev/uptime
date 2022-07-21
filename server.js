@@ -6,7 +6,7 @@ const { Strategy } = require("passport-discord")
 const mongoose = require("mongoose")
 const bp = require("body-parser")
 const { response } = require("express")
-const url = "mongodb+srv://uzayarsiv:uzayarsiv@cluster0.4fajo.mongodb.net/uptime?retryWrites=true&w=majority"
+const url = "MONGODB_URL"
 const admin = "670667760577019909"
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
